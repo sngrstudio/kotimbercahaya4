@@ -1,0 +1,381 @@
+@import url('https://necolas.github.io/normalize.css/8.0.1/normalize.css'); //normalize.css
+@import url('https://unpkg.com/basscss@8.0.2/css/basscss.css'); //BassCSS
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;1,400;1,700&family=Poppins:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Merriweather:ital,wght@0,400;0,700;1,400;1,700&display=swap'); //Google Fonts
+
+:root {
+  //Font
+  --body-font: 'Montserrat', sans-serif;
+  --heading-font: 'Poppins', sans-serif;
+  --text-font: 'Merriweather', serif;
+
+  //Colors
+  --light-shade: #ecedf0;
+  --light-accent: #599bcf;
+  --main-color: #2364cc;
+  --dark-accent: #445690;
+  --dark-shade: #191e2c;
+  --orange: #ed7e00;
+  --dark-orange: #804400;
+  --black: #000000;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--body-font);
+  background-color: var(--light-shade);
+  min-height: 100vh;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--heading-font);
+}
+
+a,
+img {
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+.home-menu {
+  background-color: var(--main-color);
+  color: var(--light-shade);
+  font-family: var(--heading-font);
+  .home-menu-label {
+    border-bottom-left-radius: 10px;
+    border-top-right-radius: 10px;
+    background-color: var(--orange);
+  }
+}
+
+.card {
+  font-family: var(--heading-font);
+  border-radius: 10px;
+  height: 100%;
+  &.card-blue {
+    background-image: linear-gradient(
+      to right,
+      var(--dark-shade),
+      var(--main-color)
+    );
+    color: var(--light-shade);
+    .card-title {
+      color: var(--light-accent);
+    }
+  }
+  &.card-yellow {
+    background-image: linear-gradient(to right, #000, var(--orange));
+    color: var(--light-shade);
+  }
+  p {
+    line-height: 1.75rem;
+  }
+}
+
+.program-accordion {
+  amp-accordion {
+    &.card {
+      header {
+        background-color: transparent;
+        border: none;
+      }
+    }
+    ul,
+    ol {
+      line-height: 1.6rem;
+    }
+  }
+}
+
+#site-header {
+  width: 100vw;
+  background-color: var(--light-shade);
+  box-shadow: 0 1px 5px #999;
+  z-index: 10;
+}
+
+#site-body {
+  padding-top: 100px;
+  color: var(--dark-shade);
+  #post {
+    #post-date {
+      color: var(--main-color);
+    }
+    #post-content {
+      p,
+      ul,
+      ol {
+        font-family: var(--text-font);
+        font-size: 1.25rem;
+        line-height: 1.75rem;
+        text-align: justify;
+      }
+    }
+  }
+}
+
+#site-menu {
+  ul {
+    background-color: var(--light-shade);
+  }
+}
+
+#site-sidebar {
+  @media (max-width: 52em) {
+    width: 80vw;
+  }
+  @media (min-width: 52em) {
+    width: 400px;
+  }
+}
+
+#site-footer {
+  min-height: 50px;
+  background-color: var(--light-shade);
+  color: var(--dark-shade);
+  width: 100%;
+  bottom: 0;
+  overflow: hidden;
+  z-index: 10;
+  box-shadow: 0 -1px 5px #999;
+}
+
+#hero-image {
+  @media (max-width: 52em) {
+    height: 240px;
+  }
+}
+
+#end {
+  background-image: linear-gradient(
+    to bottom,
+    var(--main-color),
+    var(--dark-shade)
+  );
+  min-height: 50vh;
+  @media (max-width: 52em) {
+    min-height: 100vh;
+  }
+}
+
+#post-carousel {
+  background-color: var(--main-color);
+  #post-carousel-title {
+    font-size: 3rem;
+    color: var(--light-shade);
+  }
+
+  #post-carousel-container {
+    overflow: auto;
+    white-space: nowrap;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+    article {
+      background-color: var(--light-accent);
+      width: 250px;
+      height: 400px;
+      h1,
+      p {
+        color: var(--light-shade);
+        white-space: normal;
+      }
+    }
+  }
+
+  #post-carousel-button {
+    background-color: var(--light-accent);
+    color: var(--light-shade);
+  }
+}
+
+.page-title,
+#visi-text a,
+#coming-soon-text {
+  background-image: linear-gradient(
+    to right,
+    var(--dark-shade),
+    var(--main-color)
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+#hero,
+#post-carousel {
+  img {
+    object-fit: cover;
+    object-position: center center;
+  }
+}
+
+@media (max-width: 52em) {
+  #hero,
+  #post-carousel,
+  #countdown {
+    min-height: 100vh;
+  }
+}
+
+.rounded-x {
+  border-radius: 10px;
+}
+
+.active {
+  background-color: var(--main-color);
+  .bottom-bar-button,
+  .sidebar-icon {
+    svg {
+      fill: var(--light-shade);
+    }
+    & + p {
+      color: var(--light-shade);
+    }
+  }
+}
+
+#visi-text a {
+  text-decoration: underline;
+  &:hover {
+    background-image: linear-gradient(to right, var(--orange), var(--orange));
+  }
+}
+
+#next-button,
+#prev-button {
+  background-color: var(--main-color);
+  color: white;
+  svg {
+    height: 25px;
+    width: auto;
+    fill: var(--light-shade);
+  }
+}
+
+.bottom-bar-button,
+.sidebar-icon {
+  svg {
+    fill: var(--dark-shade);
+  }
+  & + p {
+    color: var(--dark-shade);
+  }
+}
+
+.bottom-bar-button svg {
+  height: 25px;
+  width: 25px;
+}
+
+.sidebar-icon svg {
+  height: 35px;
+  width: 35px;
+}
+
+.profile-icon {
+  svg {
+    width: 75px;
+    height: 75px;
+    fill: var(--light-shade);
+  }
+}
+
+.profile-link {
+  margin-top: auto;
+  &:hover {
+    background-color: var(--orange);
+  }
+}
+
+#profil-rudini {
+  background-image: linear-gradient(
+    to right,
+    var(--dark-shade),
+    var(--main-color)
+  );
+  #profil-rudini-text {
+    color: var(--light-shade);
+    h1 {
+      font-size: 3rem;
+    }
+    @media (max-width: 40em) {
+      text-align: center;
+    }
+  }
+  #profil-rudini-image {
+    text-align: right;
+    @media (max-width: 40em) {
+      text-align: center;
+    }
+  }
+}
+
+#profil-samsudin {
+  background-image: linear-gradient(to left, var(--dark-orange), var(--orange));
+  #profil-samsudin-text {
+    color: var(--light-shade);
+    text-align: right;
+    h1 {
+      font-size: 3rem;
+    }
+    @media (max-width: 40em) {
+      text-align: center;
+    }
+  }
+  #profil-samsudin-image {
+    text-align: left;
+    @media (max-width: 40em) {
+      text-align: center;
+    }
+  }
+}
+
+.noselect {
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+#install-page > div {
+  min-height: 100vh;
+  background-image: linear-gradient(
+    to bottom,
+    var(--main-color),
+    var(--dark-shade)
+  );
+  color: var(--light-shade);
+}
+
+#phone-image {
+  top: 0;
+  @media (min-width: 52em) {
+    top: 50%;
+    transform: translate(0, -50%);
+  }
+}
+
+pwa-install::part(openButton) {
+  background-color: var(--orange);
+  border-radius: 10px;
+  padding: 0.5rem;
+  font-size: 1.25rem;
+  font-weight: bold;
+  font-family: var(--heading-font);
+}

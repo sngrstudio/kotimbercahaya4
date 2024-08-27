@@ -1,0 +1,12 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "net.kotimbercahaya.twa",
+      "sha256_cert_fingerprints": [
+        "F5:F7:60:0F:AB:3D:37:64:A1:81:0D:03:F7:12:69:DB:0A:18:76:0E:2E:4F:AD:40:CA:0D:D9:04:D8:22:F9:E4"
+      ]
+    }
+  }
+]

@@ -1,0 +1,22 @@
+---
+layout: base
+---
+
+<header id="site-header" class="fixed overflow-hidden" amp-fx="float-in-top">
+  {% include component/header.html %}
+</header>
+{% include component/sidebar.html %}
+<main id="site-body" class="flex-auto fit">{{ content }}</main>
+<footer
+  id="site-footer"
+  class="fit fixed p0 md-hide lg-hide"
+  amp-fx="float-in-bottom"
+>
+  {% include component/footer.html %}
+</footer>
+<amp-install-serviceworker
+  src="/sw.js"
+  data-iframe-src="/sw.html"
+  layout="nodisplay"
+>
+</amp-install-serviceworker>
